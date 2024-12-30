@@ -18,9 +18,8 @@ int main() {
     InitWindow(screenWidth, screenHeight, "Pigeon Invaders");
     SetTargetFPS(60);
     MainMenu mainMenu(currentScreen);
-	MainMenuMP mainMenuMP(currentScreen);
-    std::string currentUsername;
-
+	std::string currentUsername;
+    MainMenuMP mainMenuMP(currentScreen, currentUsername);
     Game game(currentScreen, currentUsername);
     GameOver gameOver(currentScreen, currentUsername);
     Leaderboard leaderboard(currentScreen);

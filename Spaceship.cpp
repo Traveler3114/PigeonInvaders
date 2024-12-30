@@ -41,7 +41,7 @@ void Spaceship::Update()
 
 void Spaceship::SpawnBullets()
 {
-    if (IsKeyPressed(shootKey)) {
+    if (IsKeyPressed(shootKey) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         bullets.emplace_back(std::make_unique<Bullet>(position.x + image.width / 2, position.y - image.height / 2));
     }
 }

@@ -53,7 +53,7 @@ void MainMenu::Update()
         if (CheckCollisionPointRec(mousePoint, { (float)spButtonX, (float)spButtonY, (float)buttonWidth, (float)buttonHeight })&&!username.empty()) {
             currentScreen = "Game";
         }
-        else if (CheckCollisionPointRec(mousePoint, { (float)mpButtonX, (float)mpButtonY, (float)buttonWidth, (float)buttonHeight })) {
+        else if (CheckCollisionPointRec(mousePoint, { (float)mpButtonX, (float)mpButtonY, (float)buttonWidth, (float)buttonHeight }) && !username.empty()) {
             currentScreen = "MainMenuMP";
         }
         else if (CheckCollisionPointRec(mousePoint, { (float)buttonX, (float)buttonY, (float)buttonWidth, (float)buttonHeight })) {
