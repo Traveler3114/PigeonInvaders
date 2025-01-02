@@ -1,6 +1,5 @@
 #include "APIConnection.h"
 #include <iostream>
-#include <string>
 #include <sstream>
 #include <iomanip> // For std::setw and std::setfill
 #include "httplib.h"

@@ -9,12 +9,12 @@ std::string currentScreen = "MainMenu";
 bool gameReset = false;
 
 int main() {
-    const int screenWidth = 1920;
-    const int screenHeight = 1080;
-    //const int screenWidth = 1280;
-    //const int screenHeight = 720;
+    //const int screenWidth = 1920;
+    //const int screenHeight = 1080;
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
 
-    SetConfigFlags(FLAG_FULLSCREEN_MODE);
+    //SetConfigFlags(FLAG_FULLSCREEN_MODE);
     InitWindow(screenWidth, screenHeight, "Pigeon Invaders");
     SetTargetFPS(60);
     MainMenu mainMenu(currentScreen);
@@ -24,8 +24,9 @@ int main() {
     GameOver gameOver(currentScreen, currentUsername);
     Leaderboard leaderboard(currentScreen);
 
+
+
     while (!WindowShouldClose()) {
-		//currentScreen = "GameOver";
         BeginDrawing();
         ClearBackground(RAYWHITE);
 

@@ -36,6 +36,7 @@ private:
     int textboxY;
     int textboxWidth;
     int textboxHeight;
+
 };
 
 
