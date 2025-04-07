@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include "APIConnection.h"
 #include <vector>
 #include <memory>
 #include "Enemy.h"
@@ -26,7 +25,6 @@ private:
     Texture2D backgroundTexture;
     Boss boss;
     Collisions collisions;
-	APIConnection apiConnection;
     float spawnTimer;
     float spawnInterval;
     float fireTimer ;

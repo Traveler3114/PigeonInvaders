@@ -14,10 +14,8 @@ MainMenu::MainMenu(std::string& screen) : currentScreen(screen), textboxActive(f
     buttonY = (GetScreenHeight() / 2) + 150;
 
     // Initialize Singleplayer and Multiplayer button positions
-    spButtonX = (GetScreenWidth() / 2) - buttonWidth - 20;
+    spButtonX = (GetScreenWidth() / 2) - (buttonWidth / 2);
     spButtonY = (GetScreenHeight() / 2) + 0;
-    mpButtonX = (GetScreenWidth() / 2) + 20;
-    mpButtonY = (GetScreenHeight() / 2) + 0;
 
     username = "";
     textboxX = (GetScreenWidth() / 2) - 250;
@@ -36,10 +34,6 @@ void MainMenu::Update()
     int spTextWidth = MeasureText(spButtonText.c_str(), buttonFontSize);
     DrawText(spButtonText.c_str(), spButtonX + (buttonWidth - spTextWidth) / 2, spButtonY + (buttonHeight - buttonFontSize) / 2, buttonFontSize, BLACK);
 
-    // Draw the "Multiplayer" button
-    DrawRectangle(mpButtonX, mpButtonY, buttonWidth, buttonHeight, LIGHTGRAY);
-    int mpTextWidth = MeasureText(mpButtonText.c_str(), buttonFontSize);
-    DrawText(mpButtonText.c_str(), mpButtonX + (buttonWidth - mpTextWidth) / 2, mpButtonY + (buttonHeight - buttonFontSize) / 2, buttonFontSize, BLACK);
 
     // Draw the "Leaderboard" button
     DrawRectangle(buttonX, buttonY, buttonWidth, buttonHeight, LIGHTGRAY);
@@ -52,9 +46,6 @@ void MainMenu::Update()
 
         if (CheckCollisionPointRec(mousePoint, { (float)spButtonX, (float)spButtonY, (float)buttonWidth, (float)buttonHeight })&&!username.empty()) {
             currentScreen = "Game";
-        }
-        else if (CheckCollisionPointRec(mousePoint, { (float)mpButtonX, (float)mpButtonY, (float)buttonWidth, (float)buttonHeight }) && !username.empty()) {
-            currentScreen = "MainMenuMP";
         }
         else if (CheckCollisionPointRec(mousePoint, { (float)buttonX, (float)buttonY, (float)buttonWidth, (float)buttonHeight })) {
             currentScreen = "Leaderboard";

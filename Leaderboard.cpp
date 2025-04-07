@@ -16,7 +16,6 @@ void Leaderboard::Update()
 {
     ClearBackground(RAYWHITE);
     DrawText("Leaderboard", GetScreenWidth() / 2 - (MeasureText("Leaderboard", 40) / 2), 20, 40, LIGHTGRAY);
-    Users = apiConnection.GetPlayers();
 
     DrawTable(tableX, tableY, cellWidth, cellHeight, Users);
 

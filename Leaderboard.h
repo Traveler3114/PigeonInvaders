@@ -3,12 +3,10 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "APIConnection.h"
 class Leaderboard{
 private:
 	std::string& currentScreen; 
 	std::vector<std::map<std::string, std::string>> Users;
-	APIConnection apiConnection;
 	int tableX;              // Top-left corner of the table
 	int tableY = 100;
 	int cellWidth;

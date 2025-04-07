@@ -26,11 +26,8 @@ private:
 
     // Additional buttons
     std::string spButtonText = "Singleplayer";
-    std::string mpButtonText = "Multiplayer";
     int spButtonX;
     int spButtonY;
-    int mpButtonX;
-    int mpButtonY;
 
     int textboxX;
     int textboxY;
