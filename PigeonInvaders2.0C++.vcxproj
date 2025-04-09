@@ -140,7 +140,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="APIConnection.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collisions.cpp" />
@@ -150,13 +149,11 @@
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Leaderboard.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="MainMenuMP.cpp" />
     <ClCompile Include="PigeonInvaders2.0C++.cpp" />
     <ClCompile Include="Spaceship.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="APIConnection.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Collisions.h" />
@@ -166,7 +163,6 @@
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Leaderboard.h" />
     <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="MainMenuMP.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Spaceship.h" />
     <ClInclude Include="Sprite.h" />
