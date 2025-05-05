@@ -52,6 +52,7 @@ void Game::Update()
         collisions.CollisionBulletVsBoss(spaceship.bullets, boss);
         collisions.CollisionSpaceshipVsBoss(spaceship, boss);
         collisions.CollisionBulletVsBossBullet(spaceship.bullets, boss.bullets);
+        collisions.CollisionSpaceshipVsBossBullet(spaceship,boss.bullets);
         if (fireTimer >= fireInterval) {
             boss.SpawnBullets();
         }
