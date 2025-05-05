@@ -8,6 +8,10 @@ Spaceship::Spaceship(int _upKey, int _downKey, int _leftKey, int _rightKey, int 
     position.y = (GetScreenHeight() - (image.height * 1.5));
     health = 3;
     score = 0;
+    isOnGround = true;
+    velocityY = 0;
+    groundLevel = 300.0f;
+    CanJump = true;
 }
 
 void Spaceship::Update()
@@ -29,6 +33,7 @@ void Spaceship::Update()
     if (position.y > GetScreenHeight() - image.height - 20) position.y = GetScreenHeight() - image.height - 20;
 
     SpawnBullets();
+    Jump();
 
     bullets.erase(std::remove_if(bullets.begin(), bullets.end(),
         [](const std::unique_ptr<Sprite>& bullet) {
@@ -43,6 +48,25 @@ void Spaceship::SpawnBullets()
 {
     if (IsKeyPressed(shootKey) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         bullets.emplace_back(std::make_unique<Bullet>(position.x + image.width / 2, position.y - image.height / 2));
+    }
+}
+
+void Spaceship::Jump() {
+    float gravity = 0.5f;
+    float jumpForce = -10.0f;
+    if ((IsKeyPressed(shootKey) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON))&&CanJump) {
+        CanJump = false;
+        velocityY = jumpForce;
+        isOnGround = false;
+    }
+    velocityY += gravity;
+    position.y += velocityY;
+
+    if (position.y >= groundLevel) {
+        position.y = groundLevel;
+        velocityY = 0;
+        isOnGround = true;
+        CanJump = true;
     }
 }
 

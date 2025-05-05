@@ -12,6 +12,7 @@ public:
 	int GetHealth();
 	void CollisionEvent() override;
 	void SpawnBullets() override;
+	void Jump();
 	void IncreaseScore();
 	std::vector<std::unique_ptr<Sprite>> bullets;
 private:
@@ -22,6 +23,10 @@ private:
 	int leftKey;
 	int rightKey;
 	int shootKey;
+	bool isOnGround;
+	float velocityY;
+	float groundLevel;
+	bool CanJump;
 };
 
 
